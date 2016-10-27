@@ -15,19 +15,19 @@ liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-mast
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml update
 ```
-## Desfaz N changesets
+### Desfaz N changesets
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml rollbackCount 1
 ```
-## Cria uma TAG
+### Cria uma TAG
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml tag CI
 ```
-##  Aplica o changeset, faz roolback e aplica novamente
+###  Aplica o changeset, faz roolback e aplica novamente
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml updateTestingRollback
 ```
-## Desfaz todas as mudanças aplicadas até a marcação
+### Desfaz todas as mudanças aplicadas até a marcação
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml rollback 1.0.1
 ```
@@ -39,11 +39,11 @@ liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-mast
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml changelogsync
 ```
-## Verifica se existe alguma TAG com nome de tagXYZ
+### Verifica se existe alguma TAG com nome de tagXYZ
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml tagExists 1.0.1
 ```
-## Se quebrar o check sum do arquivos (caso tenha sido alterado) arrumar o banco manualmente para últimar versão.
+### Se quebrar o check sum do arquivos (caso tenha sido alterado) arrumar o banco manualmente para últimar versão.
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml clearCheckSums
 ```
