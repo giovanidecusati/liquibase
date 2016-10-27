@@ -15,7 +15,7 @@ liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-mast
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml update
 ```
-## Dezfaz N changesets
+## Desfaz N changesets
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml rollbackCount 1
 ```
@@ -27,7 +27,7 @@ liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-mast
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml updateTestingRollback
 ```
-## Dezfaz todas as mudanças aplicadas até a marcação
+## Desfaz todas as mudanças aplicadas até a marcação
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml rollback 1.0.1
 ```
