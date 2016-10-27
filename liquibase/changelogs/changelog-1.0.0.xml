@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+						http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- Referenciando arquivos com código SQL -->
+	<changeSet id="20160825-0959" author="giovani">
+		<comment>Criar o Database Schema ADM.</comment>
+		<sqlFile path="../changesets/1.0.0/00-criar-schema-adm.sql" relativeToChangelogFile="true"/>
+		<rollback>
+			<sqlFile path="../changesets/1.0.0/00-criar-schema-adm.rollback.sql" relativeToChangelogFile="true"/>
+		</rollback>
+	</changeSet>
+
+	<!-- Notação XML LiquiBase -->
+	<changeSet id="20160825-1000" author="joao">
+		<comment>Criar a tabela USUARIOS.</comment>
+		<createTable tableName="USUARIOS" schemaName="adm">
+			<column name="ID" type="INT" autoIncrement="true"/>
+			<column name="EMAIL" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="SENHA" type="VARCHAR(1000)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey schemaName="adm"
+            columnNames="ID"
+            constraintName="PK_USUARIOS"
+            tableName="USUARIOS"/>
+		 <addUniqueConstraint schemaName="adm"
+            columnNames="EMAIL"
+            constraintName="UQ_USUARIOS_EMAIL"
+            tableName="USUARIOS"/>
+		<rollback>
+			 <dropTable tableName="USUARIOS" schemaName="adm"/>
+		</rollback>
+	</changeSet>
+
+	<!-- Notação SQL InLine -->
+	<changeSet id="20160825-1001" author="maria">
+		<comment>Criar a tabela PERFIS.</comment>
+		<sql>
+			CREATE TABLE [adm].[PERFIS] (
+				[ID] INT NOT NULL CONSTRAINT [PK_PERFIS] PRIMARY KEY
+				, [NOME] VARCHAR(255) NOT NULL
+			);
+		</sql>
+		<rollback>
+			DROP TABLE [adm].PERFIS;
+		</rollback>
+	</changeSet>
+
+	<!-- Aplica a TAG de versão -->
+	 <changeSet id="20160825-1002" author="giovani">	 	
+		<tagDatabase tag="1.0.0"/>
+	</changeSet>
+
+</databaseChangeLog>

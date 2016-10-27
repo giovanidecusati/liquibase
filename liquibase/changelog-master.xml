@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog 
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <!-- Script da Versão 1.0.0 -->
+    <include file="changelogs/changelog-1.0.0.xml" relativeToChangelogFile="true" />
+
+    <!-- Script da Versão 2.0.0 -->    
+    <include file="changelogs/changelog-2.0.0.xml" relativeToChangelogFile="true" />
+    
+    <!-- Script da Versão changelog-2.0.0.runalways.parametros.xml -->
+    <include file="changelogs/changelog-2.0.0.runalways.parametros.xml" relativeToChangelogFile="true" />    
+</databaseChangeLog>

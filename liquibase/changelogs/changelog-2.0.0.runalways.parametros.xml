@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+						http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- Prepara os parametros do sistema de acordo com cada ambiente -->
+	<changeSet id="20160826-0000" author="giovani" runAlways="true">
+		<comment>Limpara a tabela de parâmetros para atualizar com os valores do ambiente (dsv, tst ou prd).</comment>
+		<sql>
+			TRUNCATE TABLE [adm].[PARAMETROS];
+		</sql>
+	</changeSet>
+
+	<!-- AMBIENTE DSV -->
+	<changeSet id="20160826-0010" author="giovani" runAlways="true" context="dsv">
+		<comment>Carregar parâmetros para o ambiente de DEV.</comment>
+		<loadData file="../changesets/LoadData/carga-parametros-dsv.csv" 
+				tableName="PARAMETROS"
+				schemaName="adm"
+				separator=";"
+				relativeToChangelogFile="true">
+			<column name="CHAVE" type="STRING"/>
+            <column name="VALOR" type="STRING"/>
+		</loadData>
+	</changeSet>
+
+	<!-- AMBIENTE TST -->
+	<changeSet id="20160826-0011" author="giovani" runAlways="true" context="tst">
+		<comment>Carregar parâmetros para o ambiente de TST.</comment>
+		<loadData file="../changesets/LoadData/carga-parametros-tst.csv" 
+				tableName="PARAMETROS"
+				schemaName="adm"
+				separator=";"
+				relativeToChangelogFile="true">
+			<column name="CHAVE" type="STRING"/>
+            <column name="VALOR" type="STRING"/>
+		</loadData>
+	</changeSet>
+
+</databaseChangeLog>

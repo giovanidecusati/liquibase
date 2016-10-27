@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+						http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- Criar Tabela de Parâmetros -->
+	<changeSet id="20160826-0000" author="giovani">
+		<comment>Criar a tabela PARAMETROS.</comment>
+		<createTable tableName="PARAMETROS" schemaName="adm">
+			<column name="ID" type="INT" autoIncrement="true"/>
+			<column name="CHAVE" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="VALOR" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey schemaName="adm"
+            columnNames="ID"
+            constraintName="PK_PARAMETROS"
+            tableName="PARAMETROS"/>
+		 <addUniqueConstraint schemaName="adm"
+            columnNames="CHAVE"
+            constraintName="UQ_PARAMETROS_CHAVE"
+            tableName="PARAMETROS"/>
+		<rollback>
+			 <dropTable tableName="PARAMETROS" schemaName="adm"/>
+		</rollback>
+	</changeSet>
+
+	<!-- Aplica a TAG de versão -->
+	 <changeSet id="20160826-1000" author="giovani">	 	
+		<tagDatabase tag="2.0.0"/>
+	</changeSet>
+
+</databaseChangeLog>
