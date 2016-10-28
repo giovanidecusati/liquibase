@@ -12,7 +12,7 @@
 			ALTER TABLE [adm].[USUARIOS] ADD [DTCAD] DATETIME NULL;
 		</sql>
 		<rollback>
-			 ALTER TABLE [adm].[USUARIOS] DROP COLUMN DTCADE;
+			 ALTER TABLE [adm].[USUARIOS] DROP COLUMN DTCAD;
 		</rollback>
 	</changeSet>
 
