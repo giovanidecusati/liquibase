@@ -5,7 +5,7 @@
 ### Verifica Status
 ```
 java -jar .\lib\liquibase.jar --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml status
-.\database.ps1 --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml status
+.\database.ps1 --env=dsv status
 ```
 ### Valida o changelog
 ```

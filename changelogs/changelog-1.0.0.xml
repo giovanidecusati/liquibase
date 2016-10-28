@@ -6,6 +6,7 @@
 						http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
 	<!-- Referenciando arquivos com código SQL -->
+	<!-- ChangeSetId deve ser único, sugiro yyyyMMdd-HHmm-->
 	<changeSet id="20160825-0959" author="giovani">
 		<comment>Criar o Database Schema ADM.</comment>
 		<sqlFile path="../changesets/1.0.0/00-criar-schema-adm.sql" relativeToChangelogFile="true"/>
