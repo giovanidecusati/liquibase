@@ -14,6 +14,9 @@
     <!-- Script da Versão changelog-2.0.0.runalways.parametros.xml -->
     <include file="changelogs/changelog-2.0.0.runalways.parametros.xml" relativeToChangelogFile="true" />
 
-    <!-- Script da Versão changelog-2.0.0.runalways.parametros.xml -->
+    <!-- Script da Versão changelog-3.0.0.xml -->
     <include file="changelogs/changelog-3.0.0.xml" relativeToChangelogFile="true" />    
+
+    <!-- Script da Versão changelog-4.0.0.xml -->
+    <include file="changelogs/changelog-4.0.0.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
