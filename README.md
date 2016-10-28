@@ -1,6 +1,7 @@
 # Liquibase
 ## liquibase-3.5.1 :: comandos mais utilizados
 ## Referência: [Liquibase Command Line](http://www.liquibase.org/documentation/command_line.html)
+## [Apresentação no SlideShare](http://www.slideshare.net/GiovaniDecusati1/dojo-liquibase)
 
 ### Verifica Status
 ```
