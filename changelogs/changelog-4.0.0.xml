@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 						http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
-	<!-- Criar Tabela de Parâmetros -->
+	<!-- Adiciona campo Data de Cadastro. -->
 	<changeSet id="20161028-0000" author="giovani">
 		<comment>Adiciona campo DTCAD do usuário.</comment>
 		<sql>
@@ -17,7 +17,7 @@
 	</changeSet>
 
 	<!-- Aplica a TAG de versão -->
-	 <changeSet id="20161028-1000" author="giovani">	 	
+	 <changeSet id="20161029-1000" author="giovani">	 	
 		<tagDatabase tag="4.0.0"/>
 	</changeSet>
 

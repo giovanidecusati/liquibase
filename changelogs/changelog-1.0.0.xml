@@ -55,7 +55,7 @@
 	</changeSet>
 
 	<!-- Aplica a TAG de versão -->
-	 <changeSet id="20160825-1002" author="giovani">	 	
+	 <changeSet id="20160825-1003" author="giovani">	 	
 		<tagDatabase tag="1.0.0"/>
 	</changeSet>
 
