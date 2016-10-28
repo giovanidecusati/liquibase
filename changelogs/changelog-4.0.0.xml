@@ -9,7 +9,7 @@
 	<changeSet id="20161028-0000" author="giovani">
 		<comment>Adiciona campo DTCAD do usuário.</comment>
 		<sql>
-			ALTER TABLE [adm].[USUARIOS] ADD [DTCAD] DATETIME NULL;
+			ALTER TABLE [adm].[USUARIOS] ADD [DTCAD] DATETIME NOT NULL;
 		</sql>
 		<rollback>
 			 ALTER TABLE [adm].[USUARIOS] DROP COLUMN DTCAD;
