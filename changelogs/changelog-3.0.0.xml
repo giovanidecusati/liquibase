@@ -9,7 +9,7 @@
 	<changeSet id="20161027-0000" author="giovani">
 		<comment>Adiciona campo DTANIVER do usuário.</comment>
 		<sql>
-			ALTER TABLE [adm].[USUARIOS] ADD COLUMN DTANIVER DATETIME NULL;
+			ALTER TABLE [adm].[USUARIOS] ADD [DTANIVER] DATETIME NULL;
 		</sql>
 		<rollback>
 			 ALTER TABLE [adm].[USUARIOS] DROP COLUMN DTANIVER;
