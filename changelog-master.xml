@@ -9,14 +9,14 @@
     <include file="changelogs/changelog-1.0.0.xml" relativeToChangelogFile="true" />
 
     <!-- Script da Versão 2.0.0 -->    
-    <include file="changelogs/changelog-2.0.0.xml" relativeToChangelogFile="true" />
+    <!--<include file="changelogs/changelog-2.0.0.xml" relativeToChangelogFile="true" />-->
     
     <!-- Script da Versão changelog-2.0.0.runalways.parametros.xml -->
-    <include file="changelogs/changelog-2.0.0.runalways.parametros.xml" relativeToChangelogFile="true" />
+    <!--<include file="changelogs/changelog-2.0.0.runalways.parametros.xml" relativeToChangelogFile="true" />-->
 
     <!-- Script da Versão changelog-3.0.0.xml -->
-    <include file="changelogs/changelog-3.0.0.xml" relativeToChangelogFile="true" />    
+    <!--<include file="changelogs/changelog-3.0.0.xml" relativeToChangelogFile="true" />-->    
 
     <!-- Script da Versão changelog-4.0.0.xml -->
-    <include file="changelogs/changelog-4.0.0.xml" relativeToChangelogFile="true" />
+    <!--<include file="changelogs/changelog-4.0.0.xml" relativeToChangelogFile="true" />-->
 </databaseChangeLog>
