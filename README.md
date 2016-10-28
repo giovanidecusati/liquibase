@@ -15,6 +15,10 @@ liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-mast
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml update
 ```
+### Exibi os scripts que devem ser executados como um SQL
+```
+liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml updateSql
+```
 ### Desfaz N changesets
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml rollbackCount 1
@@ -23,13 +27,14 @@ liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-mast
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml tag CI
 ```
-###  Aplica o changeset, faz roolback e aplica novamente
-```
-liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml updateTestingRollback
-```
 ### Desfaz todas as mudanças aplicadas até a marcação
 ```
 liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml rollback 1.0.1
+Atenção: se você criar várias TAGs com o mesmo nome, ao executar o rollback o liquibase retonar para a mais antiga.
+```
+###  Aplica o changeset, faz roolback e aplica novamente
+```
+liquibase --defaultsFile=databases/dsv.properties --changeLogFile=changelog-master.xml updateTestingRollback
 ```
 ### Faz engenharia reversa
 ```
