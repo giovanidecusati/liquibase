@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+						http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- Criar Tabela de Parâmetros -->
+	<changeSet id="20161027-0000" author="giovani">
+		<comment>Adiciona campo DTANIVER do usuário.</comment>
+		<sql>
+			ALTER TABLE [adm].[USUARIOS] ADD COLUMN DTANIVER DATETIME NULL;
+		</sql>
+		<rollback>
+			 ALTER TABLE [adm].[USUARIOS] DROP COLUMN DTANIVER;
+		</rollback>
+	</changeSet>
+
+	<!-- Aplica a TAG de versão -->
+	 <changeSet id="20161027-1000" author="giovani">	 	
+		<tagDatabase tag="3.0.0"/>
+	</changeSet>
+
+</databaseChangeLog>
